@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from './recipe.model';
 import { RecipesService } from './recipes.service';
+import { AlertController } from '@ionic/angular';
+import { create } from 'domain';
+import { Options } from 'selenium-webdriver/chrome';
 
 @Component({
   selector: 'app-recipes',
@@ -33,6 +36,8 @@ export class RecipesPage implements OnInit {
 
   hapus(recipeId) {
     this.recipesService.deleteRecipe(recipeId);
+    alert("Object dengan ID: " + recipeId + " berhasil dihapus di console!");
+    console.log("Resep dengan ID: " + recipeId + "dihapus");
   }
 
 }
