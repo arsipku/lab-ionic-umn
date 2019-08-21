@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link
+            href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css"
+            rel="stylesheet"
+        />
+        <script src="apps.js"></script>
+        <title>Budget Planner</title>
+    </head>
+    <body>
+        <ion-app>
+                <ion-card-header>
+                    <ion-toolbar color="primary">
+                        <ion-title>Budget Planner</ion-title>
+                    </ion-toolbar>
+                </ion-card-header>
+                <ion-content>
+                    <ion-card>
+                        <ion-card-header class="ion-margin-bottom">
+                            <ion-card-title style="font-weight: bold">Input Pengeluaran</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <ion-item class="ion-margin-bottom">
+                                <ion-label position="floating">Nama Pengeluaran</ion-label>
+                                <ion-input id="NamaPengeluaran" type="text"></ion-input>
+                            </ion-item>
+                            <ion-item class="ion-margin-bottom">
+                                <ion-label position="floating">Jumlah Pengeluaran</ion-label>
+                                <ion-input id="JumlahPengeluaran" type="number"></ion-input>
+                            </ion-item>
+                            <ion-button color="danger" fill="outline" id = "hapus">x Hapus</ion-button>
+                            <ion-alert-controller ></ion-alert-controller>
+                            <ion-button color="primary" id="tambahButton">+ Tambah</ion-button>
+                        </ion-card-content>
+                    </ion-card>
+                    <ion-list id="listpengeluaran">
+
+                    </ion-list>
+                    <ion-text id="totalPengeluaran">Total Pengeluaran : Rp 0,00</ion-text>
+                </ion-content>
+        </ion-app>
+    </body>
+
+</html>
+
