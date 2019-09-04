@@ -38,7 +38,12 @@ export class RecipesPage implements OnInit {
   }
 
   ionViewWillEnter(){
+    console.log('ionViewWillEnter');
     this.recipes = this.recipesService.getAllRecipes();
+  }
+
+  ionViewDidEnter(){
+      console.log('ionViewDidEnter');
   }
 
 }
