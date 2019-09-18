@@ -14,6 +14,7 @@ export class PlaceDetailPage implements OnInit {
   place: Place;
 
   constructor(
+    private router: Router,
     private navCtrl: NavController,
     private route: ActivatedRoute,
     private placesService: PlacesService,
@@ -35,6 +36,13 @@ export class PlaceDetailPage implements OnInit {
   //   // this.navCtrl.navigateBack('/places/tabs/discover');
   //   // this.navCtrl.pop();
   // }
+
+  bookPlace() {
+    this.modalCtrl.create({ component: CreateBookingComponent })
+      .then(modalElement => {
+        modalElement.present();
+      })
+  }
 
   onBookPlace() {
     this.modalCtrl

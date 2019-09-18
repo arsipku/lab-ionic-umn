@@ -11,7 +11,11 @@
 
 <ion-content text-center padding>
   <p>{{selectedPlace.description}}</p>
-  <ion-button color="primary" (click)="onBookPlace()">
+  <ion-button margin expand="block" color="primary" (click)="bookThisPlace()">
     Book!
+  </ion-button>
+
+  <ion-button margin expand="block" color="danger" (click)="onCancel()">
+    Cancel
   </ion-button>
 </ion-content>
