@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <h5 text-left>
+      <b>Target Gebetan</b>
+    </h5>
+    <ion-avatar slot="end" [routerLink]="['/profile']">
+      <img
+        src="https://media.licdn.com/dms/image/C4E03AQFnkPFnRt2w-g/profile-displayphoto-shrink_200_200/0?e=1575504000&v=beta&t=IGxIs55_722fm6tkJ2UwHH5PUezUPsO9KAnRxYFMX1c">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div *ngIf="myFetchedGebetan.length>0">
+
+    <ion-list>
+      <ion-item-sliding *ngFor="let g_terpilih of myFetchedGebetan">
+        <ion-item>
+          <ion-label>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-thumbnail>
+                    <img src="{{g_terpilih.image}}" />
+                  </ion-thumbnail>
+                </ion-col>
+                <ion-col>
+                  <h5><b>{{g_terpilih.nama}}</b></h5>
+                  <p>{{g_terpilih.desc}}</p>
+                  <p>
+                    <ion-icon name="{{g_terpilih.icon}}"></ion-icon>{{g_terpilih.gender}}
+                  </p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-label>
+        </ion-item>
+
+        <ion-item-options>
+          <ion-item-option color="danger" (click)="onRemove(g_terpilih)">
+            <ion-icon slot="icon-only" name="close-circle"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+
+  <div *ngIf="myFetchedGebetan.length==0" class="ion-text-center">
+    <p><strong>Anda belum punya target gebetan.</strong></p>
+    <ion-button [routerLink]="['']">
+      Cari Gebetan
+    </ion-button>
+  </div>
+
+</ion-content>
